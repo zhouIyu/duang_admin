@@ -8,8 +8,7 @@ export function configComponentsPlugin () {
     dts: 'types/components.d.ts',
     resolvers: [
       ElementPlusResolver({
-        directives: true,
-        importStyle: 'sass'
+        directives: true
       })
     ]
   })

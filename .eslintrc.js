@@ -20,8 +20,9 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     'no-undef': 'off',
-    'vue/multi-word-component-names': ['error', {
-      ignores: ['index']
-    }]
+    'vue/multi-word-component-names': 'off',
+    'vue/first-attribute-linebreak': 'off',
+    'vue/html-self-closing': 'off',
+    'vue/html-closing-bracket-newline': 'off'
   }
 }

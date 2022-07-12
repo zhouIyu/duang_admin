@@ -6,9 +6,10 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-type Recordable<T = any> = Record<string, T>
 
-interface ViteEnv {
+declare type Recordable<T = any> = Record<string, T>
+
+declare interface ViteEnv {
   // 项目启动端口
   readonly VITE_PORT: number
   // 开启请求代理
@@ -21,8 +22,8 @@ interface ViteEnv {
   readonly VITE_APP_NAME: string
 }
 
-interface ImportMetaEnv extends ViteEnv {}
+declare interface ImportMetaEnv extends ViteEnv {}
 
-interface ImportMeta {
+declare interface ImportMeta {
   readonly env: ImportMetaEnv
 }
