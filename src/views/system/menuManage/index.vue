@@ -2,6 +2,7 @@
         setup>
 import useMenu from '@/hooks/useMenu'
 import { FormInstance } from 'element-plus'
+import { iconNameList } from '@/constant/icon'
 
 const { menuList } = useMenu()
 
@@ -108,8 +109,23 @@ const closeDialog = () => {
         </el-input>
       </el-form-item>
       <el-form-item prop="icon"
-                    label="icon">
-        <el-input placeholder="请输入菜单icon"></el-input>
+                    label="图标">
+        <el-select v-model="menuForm.icon"
+                   clearable
+                   filterable
+                   mr
+                   placeholder="选择菜单图标">
+          <el-option
+            v-for="item in iconNameList"
+            :key="item"
+            :label="item"
+            :value="item">
+            <el-icon :class="item"
+                     size="24px"></el-icon>
+          </el-option>
+        </el-select>
+        <el-icon :class="menuForm.icon"
+                 size="24px"></el-icon>
       </el-form-item>
       <el-form-item prop="path"
                     label="地址">
