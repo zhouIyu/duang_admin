@@ -83,6 +83,14 @@ const menuList: Menu.MenuOptions[] = [
         status: 1
       }
     ]
+  },
+  {
+    id: 4,
+    title: '百度',
+    path: 'https://www.baidu.com',
+    icon: 'link',
+    isLink: true,
+    status: 1
   }
 ]
 

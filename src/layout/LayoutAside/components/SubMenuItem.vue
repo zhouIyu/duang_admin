@@ -1,4 +1,6 @@
-<script lang="ts" setup name="SubMenuItem">
+<script lang="ts"
+        setup
+        name="SubMenuItem">
 interface PropTypes {
   menuList: Menu.MenuOptions[]
 }
@@ -6,9 +8,13 @@ interface PropTypes {
 withDefaults(defineProps<PropTypes>(), {
   menuList: () => []
 })
-
+const router = useRouter()
 const hasChildren = (item: Menu.MenuOptions): boolean | undefined => {
   return item.children && item.children.length > 0
+}
+
+const handleMenuClick = (item: Menu.MenuOptions): void => {
+  item.isLink ? window.open(item.path, '_blank') : router.push(item.path)
 }
 </script>
 
@@ -26,7 +32,8 @@ const hasChildren = (item: Menu.MenuOptions): boolean | undefined => {
         <SubMenuItem :menu-list="subItem.children" />
       </el-sub-menu>
       <el-menu-item v-else
-                    :index="subItem.path">
+                    :index="subItem.path"
+                    @click="handleMenuClick(subItem)">
         <el-icon :class="`i-ep-${subItem.icon}`" />
         <template #title>
           <span>{{ subItem.title }}</span>

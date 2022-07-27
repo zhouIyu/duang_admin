@@ -32,7 +32,7 @@ const showDialog = () => {
   dialogVisible.value = true
 }
 const closeDialog = () => {
-  onResetMenuForm(menuFormRef.value)
+  onResetMenuForm(unref(menuFormRef))
   dialogVisible.value = false
 }
 </script>
@@ -41,7 +41,6 @@ const closeDialog = () => {
   <div class="operate-content"
        mb>
     <el-button type="success"
-               size="default"
                @click="showDialog">
       <template #icon>
         <el-icon class="i-ep-circle-plus"></el-icon>

@@ -1,4 +1,6 @@
-<script lang="ts" setup name="Menu">
+<script lang="ts"
+        setup
+        name="Menu">
 import useMenu from '@/hooks/useMenu'
 import { MenuStore } from '@/store/modules/menu'
 import Logo from './components/Logo.vue'
@@ -25,9 +27,8 @@ const activeMenu = computed((): string => route.path)
     <Logo :is-collapse="isCollapse" />
     <el-scrollbar>
       <el-menu :default-active="activeMenu"
-               :router="true"
                :collapse="isCollapse"
-               :collapse-transition="false"
+               :collapse-transition="true"
                :unique-opened="true"
                background-color="#20222a"
                text-color="#bdbdc0"
@@ -38,6 +39,7 @@ const activeMenu = computed((): string => route.path)
   </div>
 </template>
 
-<style lang="scss" scope>
+<style lang="scss"
+       scope>
 @import './index';
 </style>
