@@ -3,7 +3,7 @@ import App from './App.vue'
 import { setupRouter } from './router'
 import { setupStore } from './store'
 import 'normalize.css/normalize.css'
-import { setupIcon } from './utils/icon'
+import 'uno.css'
 
 function bootstrap () {
   const app = createApp(App)
@@ -11,8 +11,6 @@ function bootstrap () {
   setupStore(app)
 
   setupRouter(app)
-
-  setupIcon(app)
 
   app.mount('#app')
 }

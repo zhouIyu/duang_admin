@@ -1,5 +1,4 @@
 import { ConfigEnv, loadEnv, UserConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import { createAlias, wrapperEnv, createProxy, createVitePlugin } from './build/index'
 
 export default ({

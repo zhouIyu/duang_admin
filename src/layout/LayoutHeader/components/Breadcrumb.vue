@@ -6,7 +6,7 @@ const matched = computed(() => route.matched.filter(item => item.meta && item.me
 <template>
   <el-breadcrumb separator="/">
     <el-breadcrumb-item key="/home"
-                        :to="{ path: '/index' }">
+                        :to="{ path: '/home/index' }">
       首页
     </el-breadcrumb-item>
     <el-breadcrumb-item v-for="item in matched"

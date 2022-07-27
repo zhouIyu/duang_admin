@@ -1,6 +1,8 @@
-<script lang="ts" setup>
+<script lang="ts"
+        setup>
 import LayoutAside from './LayoutAside/index.vue'
 import LayoutHeader from './LayoutHeader/index.vue'
+
 </script>
 
 <template>
@@ -14,12 +16,15 @@ import LayoutHeader from './LayoutHeader/index.vue'
       </el-header>
       <el-main>
         <section class="wrapper">
-          <router-view />
+          <el-config-provider>
+            <router-view />
+          </el-config-provider>
         </section>
       </el-main>
     </el-container>
   </el-container>
 </template>
-<style lang="scss" scoped>
+<style lang="scss"
+       scoped>
 @import './index.scss';
 </style>

@@ -1,4 +1,5 @@
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import IconsResolver from 'unplugin-icons/resolver'
 import AutoComponent from 'unplugin-vue-components/vite'
 
 export function configComponentsPlugin () {
@@ -9,7 +10,8 @@ export function configComponentsPlugin () {
     resolvers: [
       ElementPlusResolver({
         directives: true
-      })
+      }),
+      IconsResolver()
     ]
   })
 }

@@ -1,18 +1,21 @@
 <script lang="ts" setup name="Menu">
+import useMenu from '@/hooks/useMenu'
 import { MenuStore } from '@/store/modules/menu'
 import Logo from './components/Logo.vue'
 import SubMenuItem from './components/SubMenuItem.vue'
 import _menuList from '@/data/menu'
 
-const menuStore = MenuStore()
+const {
+  menuList,
+  changeMenu
+} = useMenu()
 const route = useRoute()
 
 onMounted(() => {
-  menuStore.setMenuList(_menuList)
+  changeMenu(_menuList)
 })
 
-const isCollapse = computed((): boolean => menuStore.isCollapse)
-const menuList = computed((): Menu.MenuOptions[] => menuStore.menuList)
+const isCollapse = computed((): boolean => MenuStore().isCollapse)
 const activeMenu = computed((): string => route.path)
 </script>
 

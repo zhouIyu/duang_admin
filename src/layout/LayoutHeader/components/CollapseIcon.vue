@@ -3,7 +3,7 @@ import { MenuStore } from '@/store/modules/menu'
 
 const menuStore = MenuStore()
 const isComponent = computed((): string => {
-  return menuStore.isCollapse ? 'expand' : 'fold'
+  return menuStore.isCollapse ? 'i-ep-expand' : 'i-ep-fold'
 })
 const toggleCollapse = () => {
   menuStore.toggleCollapse()
@@ -12,8 +12,8 @@ const toggleCollapse = () => {
 
 <template>
   <el-icon class="collapse-icon"
+           :class="isComponent"
            @click="toggleCollapse">
-    <component :is="isComponent" />
   </el-icon>
 </template>
 
