@@ -7,10 +7,10 @@ import { configVue } from './vue'
 
 export function createVitePlugin (): PluginOption[] {
   const plugins: PluginOption[] = []
-  plugins.push(configVue())
   plugins.push(configAutoImportPlugin())
   plugins.push(configComponentsPlugin())
   plugins.push(configUnocss())
   plugins.push(configIcons())
+  plugins.push(configVue())
   return plugins
 }

@@ -1,19 +1,23 @@
 <script lang="ts"
         setup>
 import { iconNameList } from '@/constant/icon'
+import { useMessage } from '@/hooks/useMessage'
 
 const icons = ref<string[]>(iconNameList)
+const clipIconName = async (name: string) => {
+  await navigator.clipboard.writeText(name)
+  useMessage('复制成功', 'success')
+}
 </script>
 <template>
   <div class="icon-content">
     <div v-for="icon in icons"
          :key="icon"
          class="icon"
-         flex-wrap
+         @click="clipIconName(icon)"
     >
       <el-icon :class="icon"
-               size="20px"
-               mb></el-icon>
+               mb />
       <div class="icon-name">
         {{ icon }}
       </div>
@@ -42,9 +46,17 @@ const icons = ref<string[]>(iconNameList)
     user-select: none;
     cursor: pointer;
 
+    .el-icon {
+      font-size: 24px;
+    }
+
     &:hover {
       background-color: rgb(236, 245, 255);
       color: rgb(140, 197, 255);
+
+      .el-icon {
+        transform: scale(1.8);
+      }
     }
   }
 }
