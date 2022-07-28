@@ -91,6 +91,13 @@ const menuList: Menu.MenuOptions[] = [
     icon: 'link',
     isLink: true,
     status: 1
+  },
+  {
+    id: 5,
+    title: '图标',
+    path: '/icon/ep',
+    icon: 'eleme',
+    status: 1
   }
 ]
 
